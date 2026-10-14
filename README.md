@@ -16,7 +16,16 @@ This project will be a player vs enemy game where you have enemy NPCs chasing th
 
 • Steering behaviours and boids - For smooth movement with enemies
 
+## Current progress
+Created Github repository
+
+Created project scene
+
+Added Finite state machine lab1
+
 ## Research
 
 ## Methodology/planning
 Will be using Github project boards to implement the use of KANBAN for the project planning.
+
+## References
