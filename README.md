@@ -3,9 +3,19 @@
 ## Description/overview
 ### AI Features To Include:
 • Finite state machine
+
 • Agent sensors
+
 • Pathfinding
+
 • Behaviour trees
+
+• Goal oriented action planning
+
+• Steering behaviours and boids
+
+• Adversarial and probabilistic search
+
 
 1. Name of your project
 2. Description/overview - What AI features will the project have/showcase and in what way will they be realised.  For example, for FSM what type of agents will be created using FSM such as enemies, companion, allies, etc.  
