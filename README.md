@@ -21,11 +21,21 @@ Created Github repository
 
 Created project scene
 
-Added Finite state machine lab1
+Added finite state machine lab1
+
+Added player movement
+
+Added Cinemachine camera
 
 ## Research
+### Finite state machines
+• Finite state machines are used to manage complex behaviours in game development
+• Different states, transitions and actions
+• Managing AI states like patrolling, chasing, and attacking. 
 
 ## Methodology/planning
 Will be using Github project boards to implement the use of KANBAN for the project planning.
 
 ## References
+https://medium.com/@parameesupipiinduwari/finite-state-machines-in-game-development-3c12dc4d667a
+https://medium.com/@eveciana21/new-input-system-smooth-movement-7ad38e81fb1b
