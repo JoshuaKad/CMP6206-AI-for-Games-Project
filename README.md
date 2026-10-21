@@ -1,7 +1,7 @@
 # AI For Games Project
 
 ## Description/overview
-This project will be a player vs enemy game where you have enemy NPCs chasing the player. The difficulty will increase as you go through the waves and different enemies will have different abilities. The game will be made in Unity.
+This project will be a sci-fi shooter with different enemy raids that the player has to get past. The difficulty will increase as you go through the different raids and different enemies will have different abilities. The game will be made in Unity.
 
 ### AI Features To Include:
 • Finite state machine - Through implementing enemies that follows and attacks the player
