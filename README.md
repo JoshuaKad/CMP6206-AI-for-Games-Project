@@ -30,7 +30,9 @@ Added Cinemachine camera
 ## Research
 ### Finite state machines
 • Finite state machines are used to manage complex behaviours in game development
+
 • Different states, transitions and actions
+
 • Managing AI states like patrolling, chasing, and attacking. 
 
 ## Methodology/planning
