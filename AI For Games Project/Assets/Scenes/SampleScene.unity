@@ -1403,8 +1403,9 @@ GameObject:
   - component: {fileID: 1659009452}
   - component: {fileID: 1659009451}
   - component: {fileID: 1659009450}
+  - component: {fileID: 1659009455}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Agent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1424,6 +1425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Agent
   speed: 10
   rotationSpeed: 200
+  stoppindDistance: 2
   player: {fileID: 563159556}
 --- !u!136 &1659009451
 CapsuleCollider:
@@ -1521,6 +1523,26 @@ Transform:
   - {fileID: 60708071}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1659009455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659009449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9abd3437d8a50f4baeee71071d1b4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AiSensor
+  distance: 10
+  angle: 30
+  height: 1
+  meshColor: {r: 1, g: 0, b: 0, a: 1}
+  scanFrequency: 30
+  layers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1829188446
 GameObject:
   m_ObjectHideFlags: 0
