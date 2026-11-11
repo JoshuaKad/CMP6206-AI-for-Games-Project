@@ -10,11 +10,11 @@ This project will be a sci-fi shooter with different enemy raids that the player
 
 - [ ] • Pathfinding - Enemies will have the ability to move around the map and around objects to reach the player using A* pathfinding
 
-• Behaviour trees - To control the animation for the between the different states
+- [ ] • Behaviour trees - To control the animation for the between the different states
 
-• Goal oriented action planning - To enable enemies to follow actions to gain a specific goal
+- [ ] • Goal oriented action planning - To enable enemies to follow actions to gain a specific goal
 
-• Steering behaviours and boids - For smooth movement with enemies
+- [ ] • Steering behaviours and boids - For smooth movement with enemies
 
 ## Current progress
 Created Github repository
