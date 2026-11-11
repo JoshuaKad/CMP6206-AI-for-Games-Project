@@ -4,11 +4,11 @@
 This project will be a sci-fi shooter with different enemy raids that the player has to get past. The difficulty will increase as you go through the different raids and different enemies will have different abilities. The game will be made in Unity.
 
 ### AI Features To Include:
-• Finite state machine - Through implementing enemies that follows and attacks the player
+- [x] • Finite state machine - Through implementing enemies that follows and attacks the player
+ 
+- [x] • Agent sensors - Enemies will sense when a player is nearby
 
-• Agent sensors - Enemies will sense when a player is nearby
-
-• Pathfinding - Enemies will have the ability to move around the map and around objects to reach the player using A* pathfinding
+- [ ] • Pathfinding - Enemies will have the ability to move around the map and around objects to reach the player using A* pathfinding
 
 • Behaviour trees - To control the animation for the between the different states
 
@@ -21,7 +21,9 @@ Created Github repository
 
 Created project scene
 
-Added finite state machine lab1
+Added finite state machines
+
+Started sensors implementation
 
 Added player movement
 
@@ -41,3 +43,4 @@ Will be using Github project boards to implement the use of KANBAN for the proje
 ## References
 https://medium.com/@parameesupipiinduwari/finite-state-machines-in-game-development-3c12dc4d667a
 https://medium.com/@eveciana21/new-input-system-smooth-movement-7ad38e81fb1b
+https://www.youtube.com/watch?v=znZXmmyBF-o
