@@ -1,5 +1,5 @@
-using Unity.Profiling.Memory;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class AiSensor : MonoBehaviour
 {
@@ -9,12 +9,15 @@ public class AiSensor : MonoBehaviour
     [SerializeField] Color meshColor = Color.red;
     [SerializeField] int scanFrequency = 30;
     [SerializeField] LayerMask layers;
+    public List<GameObject> objects = new List<GameObject>();
 
     Collider[] colliders = new Collider[50];
     Mesh mesh;
     int count;
     float scanInterval;
     float scanTimer;
+
+    [SerializeField] Agent agentScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,7 +28,12 @@ public class AiSensor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        scanTimer -= Time.deltaTime;
+        if (scanTimer < 0)
+        {
+            scanTimer += scanInterval;
+            Scan();
+        }
     }
 
     Mesh CreateWedgeMesh()
@@ -115,7 +123,38 @@ public class AiSensor : MonoBehaviour
     {
         mesh = CreateWedgeMesh();
         scanInterval = 1.0f / scanFrequency;
+    }
 
+    private void Scan()
+    {
+        count = Physics.OverlapSphereNonAlloc(transform.position, distance, colliders, layers, QueryTriggerInteraction.Collide);
+
+        objects.Clear();
+        for (int i = 0; i < count; ++i)
+        {
+            GameObject obj = colliders[i].gameObject;
+            if (IsInSight(obj))
+            {
+                objects.Add(obj);
+            }
+        }
+        
+    }
+
+    public bool IsInSight(GameObject obj)
+    {
+        Vector3 origin = transform.position;
+        Vector3 dest = obj.transform.position;
+        Vector3 direction = dest - origin;
+        if (direction.y < 0 || direction.y > height)
+        {
+            return false;
+        }
+
+        direction.y = 0;
+        float angle = agentScript.CalculateAngle();
+
+        return true;
     }
 
     private void OnDrawGizmos()
@@ -124,6 +163,18 @@ public class AiSensor : MonoBehaviour
         {
             Gizmos.color = meshColor;
             Gizmos.DrawMesh(mesh, transform.position, transform.rotation);
+        }
+
+        Gizmos.DrawWireSphere(transform.position, distance);
+        for (int i = 0; i < count; ++i)
+        {
+            Gizmos.DrawSphere(colliders[i].transform.position, 0.2f);
+        }
+
+        Gizmos.color = Color.green;
+        foreach (var obj in objects)
+        {
+            Gizmos.DrawSphere(obj.transform.position, 2f);
         }
     }
 }

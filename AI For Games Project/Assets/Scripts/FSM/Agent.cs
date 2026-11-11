@@ -107,7 +107,7 @@ public class Agent : MonoBehaviour
     }
 
     // Calculate the vector to the seek object
-    float CalculateAngle()
+    public float CalculateAngle()
     {
 
         // Chibi foward facing vector
@@ -132,9 +132,9 @@ public class Agent : MonoBehaviour
         //Debug.Log("Unity Angle: " + Vector3.Angle(tF, sD));
 
         // Draw a ray showing the chibi's forward facing vector
-        Debug.DrawRay(this.transform.position, tF * 10.0f, Color.green, 2.0f);
+        //Debug.DrawRay(this.transform.position, tF * 10.0f, Color.green, 2.0f);
         // Draw a ray showing the vector to the saught object
-        Debug.DrawRay(this.transform.position, sD, Color.red, 2.0f);
+        //Debug.DrawRay(this.transform.position, sD, Color.red, 2.0f);
 
         return angle;
     }

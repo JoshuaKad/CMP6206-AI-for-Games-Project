@@ -4,11 +4,11 @@
 This project will be a sci-fi shooter with different enemy raids that the player has to get past. The difficulty will increase as you go through the different raids and different enemies will have different abilities. The game will be made in Unity.
 
 ### AI Features To Include:
-- [x] • Finite state machine - Through implementing enemies that follows and attacks the player
+- [x] • Finite state machine - Through implementing enemies that follows and attacks the player. Different states like idle, wander, chase etc
  
-- [x] • Agent sensors - Enemies will sense when a player is nearby
+- [x] • Agent sensors - Enemies will sense when a player is nearby. Different senses like sight, hearing through footsteps, gunshots etc
 
-- [ ] • Pathfinding - Enemies will have the ability to move around the map and around objects to reach the player using A* pathfinding
+- [ ] • Pathfinding - Enemies will have the ability to move around the map and around objects to reach the player using A* pathfinding. Findind the most efficient method to reach the player
 
 - [ ] • Behaviour trees - To control the animation for the between the different states
 
