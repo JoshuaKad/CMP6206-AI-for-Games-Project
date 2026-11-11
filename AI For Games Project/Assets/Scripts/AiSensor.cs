@@ -9,6 +9,7 @@ public class AiSensor : MonoBehaviour
     [SerializeField] Color meshColor = Color.red;
     [SerializeField] int scanFrequency = 30;
     [SerializeField] LayerMask layers;
+    [SerializeField] LayerMask occlusionLayers;
     public List<GameObject> objects = new List<GameObject>();
 
     Collider[] colliders = new Collider[50];
@@ -152,7 +153,18 @@ public class AiSensor : MonoBehaviour
         }
 
         direction.y = 0;
-        float angle = agentScript.CalculateAngle();
+        float deltaAngle = agentScript.CalculateAngle();
+        if (deltaAngle > angle)
+        {
+            return false;
+        }
+
+        origin.y += height / 2;
+        dest.y = origin.y;
+        if (Physics.Linecast(origin, dest, occlusionLayers))
+        {
+            return false;
+        }
 
         return true;
     }
