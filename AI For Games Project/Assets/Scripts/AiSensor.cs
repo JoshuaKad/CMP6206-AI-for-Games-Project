@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class AiSensor : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class AiSensor : MonoBehaviour
     int count;
     float scanInterval;
     float scanTimer;
+    bool playerDetected;
 
     [SerializeField] Agent agentScript;
 
@@ -35,6 +37,12 @@ public class AiSensor : MonoBehaviour
             scanTimer += scanInterval;
             Scan();
         }
+
+        if (objects.Capacity > 0 && agentScript != null)
+        {
+            agentScript.FollowPlayer();
+        }
+
     }
 
     Mesh CreateWedgeMesh()

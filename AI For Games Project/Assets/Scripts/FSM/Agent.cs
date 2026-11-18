@@ -11,6 +11,7 @@ public class Agent : MonoBehaviour
     [SerializeField] float rotationSpeed = 200.0f;
     [SerializeField] float stoppindDistance = 2.0f;
 
+
     public GameObject player;
 
 
@@ -74,7 +75,7 @@ public class Agent : MonoBehaviour
         }
     }
 
-    void FollowPlayer()
+    public void FollowPlayer()
     {
         float angle_to_turn = CalculateAngle();
         Vector3 directionToPlayer = player.transform.position - transform.position;
@@ -84,6 +85,7 @@ public class Agent : MonoBehaviour
             angle_to_turn = -angle_to_turn;
         }
         this.transform.Rotate(0, angle_to_turn, 0);
+        transform.position += transform.forward * speed * Time.deltaTime;
     }
 
 
@@ -140,7 +142,7 @@ public class Agent : MonoBehaviour
     }
 
     // Calculate the distance from the chibi to whatever it is finding
-    void CalculateDistance()
+    float CalculateDistance()
     {
 
         // Chibi position
@@ -152,7 +154,7 @@ public class Agent : MonoBehaviour
 
         // TODO: Calculate the distance between the objects tP and sP using pythagoras
         distance = Mathf.Sqrt((sP.x - tP.x) * (sP.x - tP.x) + (sP.y - tP.y) * (sP.y - tP.y) + (sP.z - tP.z) * (sP.z - tP.z));
-
+        return distance;
         // Calculate and compare your calculation with the distance using Unitys vector distance function
         //float unityDistance = Vector3.Distance(tP, sP);
 
